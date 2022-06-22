@@ -29,6 +29,7 @@ final class PinCodeViewController: UIViewController {
     @IBOutlet weak var deleteBtn: UIButton!
     
     // MARK: - Properties
+    private lazy var circlesViewArray = [firstCircleView, secondCircleView, thirdCircleView, fourthCircleView]
     
     private lazy var buttonsArray = [oneNumberBtn, twoNumberBtn, threeNumberBtn, fourNumberBtn, fiveNumberBtn,
                                      sixNumberBtn, sevenNumberBtn, eightNumberBtn, nineNumberBtn, zeroNumberBtn,
@@ -54,24 +55,41 @@ final class PinCodeViewController: UIViewController {
             
             button
                 .publisher(forEvent: .touchUpInside)
-                .sink { print("Tapped", button.tag) }
+                .sink { [weak self, weak button] in
+                    guard let button = button else {
+                        return
+                    }
+                    print("Tapped", button.tag, String(button.accessibilityIdentifier ?? String()))
+                    self?.buttonsTapHandler(button)
+                }
                 .store(in: &cancellables)
             
         }
     }
     
-    // MARK: - Actions
-    
-    @IBAction func oneBtnTap(_ sender: UIButton) {
-        let newNumber = sender.tag
-        pinNumbers.append(newNumber)
-    }
-    
-    @IBAction func deleteBtnTap(_ sender: UIButton) {
-        if pinNumbers.count > 1 {
-            pinNumbers.removeLast()
+    private func buttonsTapHandler(_ button: UIButton) {
+        if (0...9) ~= button.tag {
+            if (0...3) ~= pinNumbers.count {
+                pinNumbers.append(button.tag)
+                coloringCircleView()
+            }
+        }
+        
+        if button.accessibilityIdentifier == "delete" || button.tag == 999 {
+            coloringCircleView()
+            if !pinNumbers.isEmpty {
+                pinNumbers.removeLast()
+            }
         }
     }
+    
+    private func coloringCircleView() {
+        let index = pinNumbers.count - 1
+        if (0...3) ~= index {
+            circlesViewArray[index]?.toggleState()
+        }
+    }
+    
 }
 
 // MARK: - Helpers and extensions

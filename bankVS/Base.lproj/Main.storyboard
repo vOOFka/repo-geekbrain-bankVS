@@ -1,24 +1,239 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Pin Code View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PinCodeViewController" customModule="bankVS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Gcb-tr-zld">
+                                <rect key="frame" x="60" y="144" width="294" height="80"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1NF-nx-qez" customClass="CircleView" customModule="bankVS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="20" width="40" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="iwZ-xU-QFP"/>
+                                            <constraint firstAttribute="height" constant="40" id="jKt-uS-H6d"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="myV-Kn-LhT" customClass="CircleView" customModule="bankVS" customModuleProvider="target">
+                                        <rect key="frame" x="84.5" y="20" width="40" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="4mk-TI-Vod"/>
+                                            <constraint firstAttribute="width" constant="40" id="nMe-9G-WBu"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dtV-hR-IvA" customClass="CircleView" customModule="bankVS" customModuleProvider="target">
+                                        <rect key="frame" x="169.5" y="20" width="40" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="8o9-O4-IwY"/>
+                                            <constraint firstAttribute="height" constant="40" id="aUj-uI-gV5"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bX7-pP-94W" customClass="CircleView" customModule="bankVS" customModuleProvider="target">
+                                        <rect key="frame" x="254" y="20" width="40" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="MHa-ZZ-yKQ"/>
+                                            <constraint firstAttribute="width" constant="40" id="dta-gT-R5q"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="JAL-XR-2q2"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="eEB-pE-1Wm">
+                                <rect key="frame" x="20" y="382" width="374" height="380"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="UAT-3g-LL7">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtT-O9-aWy">
+                                                <rect key="frame" x="0.0" y="0.0" width="111.5" height="80"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="1">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="60"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="oneBtnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VCz-ZY-p9J"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8W6-VY-AZz">
+                                                <rect key="frame" x="131.5" y="0.0" width="111" height="80"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="2">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="60"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="oneBtnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Te1-ob-5TI"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddS-gv-67g">
+                                                <rect key="frame" x="262.5" y="0.0" width="111.5" height="80"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="3">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="60"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="oneBtnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BoM-lS-215"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="lRJ-e6-6Zf"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ghr-o6-mIN">
+                                        <rect key="frame" x="0.0" y="100" width="374" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pcf-yQ-Kxd">
+                                                <rect key="frame" x="0.0" y="0.0" width="111.5" height="80"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="4">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="60"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="oneBtnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t6K-dW-PPN"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r4M-9j-3Gc">
+                                                <rect key="frame" x="131.5" y="0.0" width="111" height="80"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="5">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="60"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="oneBtnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uUu-SX-zuy"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ke-cQ-3kF">
+                                                <rect key="frame" x="262.5" y="0.0" width="111.5" height="80"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="6">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="60"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="oneBtnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="06D-eb-UEk"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="ljN-Hy-C9p"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="OjV-f5-bjU">
+                                        <rect key="frame" x="0.0" y="200" width="374" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4o-5y-ax3">
+                                                <rect key="frame" x="0.0" y="0.0" width="111.5" height="80"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="7">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="60"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="oneBtnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JdU-L9-Flo"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9c-f6-gv5">
+                                                <rect key="frame" x="131.5" y="0.0" width="111" height="80"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="8">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="60"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="oneBtnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V2p-8w-L0Q"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="9" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5u2-k9-urK">
+                                                <rect key="frame" x="262.5" y="0.0" width="111.5" height="80"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="9">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="60"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="oneBtnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L36-kq-2HG"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="I1N-b5-h9q"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="a60-Ha-k8Y">
+                                        <rect key="frame" x="0.0" y="300" width="374" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEX-Fj-rXj">
+                                                <rect key="frame" x="0.0" y="0.0" width="177" height="80"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="0">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="60"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="oneBtnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n26-PH-CIS"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aaa-Iy-YRP">
+                                                <rect key="frame" x="197" y="0.0" width="177" height="80"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Delete">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="40"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="deleteBtnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yq9-wf-Uls"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="fQk-dl-TDu"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Gcb-tr-zld" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="4HG-iI-NmP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eEB-pE-1Wm" secondAttribute="bottom" constant="100" id="FoR-ep-Ac7"/>
+                            <constraint firstItem="eEB-pE-1Wm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Kdw-gM-3pS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eEB-pE-1Wm" secondAttribute="trailing" constant="20" id="dnI-2S-ui6"/>
+                            <constraint firstItem="eEB-pE-1Wm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ePO-fl-vR2"/>
+                            <constraint firstItem="Gcb-tr-zld" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="rZl-1b-uPM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Gcb-tr-zld" secondAttribute="trailing" constant="60" id="uuL-BU-Afn"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="firstCircleView" destination="1NF-nx-qez" id="7lr-3K-QDp"/>
+                        <outlet property="fourthCircleView" destination="bX7-pP-94W" id="eNx-Ma-oR1"/>
+                        <outlet property="secondCircleView" destination="myV-Kn-LhT" id="Gb7-Pk-xBt"/>
+                        <outlet property="thirdCircleView" destination="dtV-hR-IvA" id="Jkz-5G-90d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="95.758928571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

@@ -36,6 +36,7 @@ final class PinCodeViewController: UIViewController {
                                      deleteBtn]
     
     private var pinNumbers: [Int] = []
+    private let correctPin = "1111"
     private var cancellables: [AnyCancellable] = []
     
     // MARK: - Life cycle
@@ -81,6 +82,19 @@ final class PinCodeViewController: UIViewController {
                 pinNumbers.removeLast()
             }
         }
+        
+        if pinNumbers.count == 4 {
+            let pin = pinNumbers.map{ String($0) }.reduce("", +)
+            if pin == correctPin {
+                showError(message: "The PIN code is correct", title: "Congratulations") { [weak self] _ in
+                    self?.cleanCircleViews()
+                }
+            } else {
+                showError(message: "Invalid PIN Code") { [weak self] _ in
+                    self?.cleanCircleViews()
+                }
+            }
+        }
     }
     
     private func coloringCircleView() {
@@ -88,6 +102,11 @@ final class PinCodeViewController: UIViewController {
         if (0...3) ~= index {
             circlesViewArray[index]?.toggleState()
         }
+    }
+    
+    private func cleanCircleViews() {
+        pinNumbers.removeAll()
+        circlesViewArray.forEach { $0?.toggleState() }
     }
     
 }
@@ -159,5 +178,15 @@ extension Publishers {
                 consumeDemand()
             }
         }
+    }
+}
+
+extension UIViewController {
+    func showError(message: String, title: String? = "Error", handler: ((UIAlertAction) -> Void)? = nil) {
+        let alertViewController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let closeAction = UIAlertAction(title: "Close", style: .default, handler: handler)
+        
+        alertViewController.addAction(closeAction)
+        present(alertViewController, animated: true)
     }
 }

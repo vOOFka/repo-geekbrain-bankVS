@@ -188,6 +188,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aaa-Iy-YRP">
                                                 <rect key="frame" x="197" y="0.0" width="177" height="80"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="delete"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Delete">
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="40"/>
@@ -217,10 +218,21 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="deleteBtn" destination="Aaa-Iy-YRP" id="ab1-ZH-Fjh"/>
+                        <outlet property="eightNumberBtn" destination="K9c-f6-gv5" id="Fxe-GF-0kk"/>
                         <outlet property="firstCircleView" destination="1NF-nx-qez" id="7lr-3K-QDp"/>
+                        <outlet property="fiveNumberBtn" destination="r4M-9j-3Gc" id="BA7-6J-Moz"/>
+                        <outlet property="fourNumberBtn" destination="Pcf-yQ-Kxd" id="QBP-ph-l1O"/>
                         <outlet property="fourthCircleView" destination="bX7-pP-94W" id="eNx-Ma-oR1"/>
+                        <outlet property="nineNumberBtn" destination="5u2-k9-urK" id="O2Y-4Z-Re5"/>
+                        <outlet property="oneNumberBtn" destination="HtT-O9-aWy" id="1NQ-I8-0O2"/>
                         <outlet property="secondCircleView" destination="myV-Kn-LhT" id="Gb7-Pk-xBt"/>
+                        <outlet property="sevenNumberBtn" destination="M4o-5y-ax3" id="NFC-kb-6cB"/>
+                        <outlet property="sixNumberBtn" destination="2Ke-cQ-3kF" id="zrq-CT-l04"/>
                         <outlet property="thirdCircleView" destination="dtV-hR-IvA" id="Jkz-5G-90d"/>
+                        <outlet property="threeNumberBtn" destination="ddS-gv-67g" id="7wi-cb-L0p"/>
+                        <outlet property="twoNumberBtn" destination="8W6-VY-AZz" id="6ph-Ly-SHn"/>
+                        <outlet property="zeroNumberBtn" destination="bEX-Fj-rXj" id="7uX-BJ-z6J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
